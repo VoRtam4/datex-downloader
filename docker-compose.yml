@@ -1,0 +1,10 @@
+version: "3"
+services:
+  datex-server:
+    build: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./data/ndic_messages:/app/ndic_messages
+      - ./data/statistics.json:/app/statistics.json
+    restart: unless-stopped
